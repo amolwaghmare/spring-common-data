@@ -1,7 +1,10 @@
 package com.amol.spring.data.jpa.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -9,6 +12,7 @@ import javax.persistence.Table;
 public class Address {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	private String addressLine1;
@@ -18,10 +22,19 @@ public class Address {
 	private String postCode;
 	
 	private String country;
+	
+	
+	
 
+	public Address() {
+		
+	}
+	
+	
 	public int getId() {
 		return id;
 	}
+
 
 	public void setId(int id) {
 		this.id = id;
